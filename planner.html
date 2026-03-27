@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>✈ TravelEase</h2>
+  <button onclick="toggleMode()">🌙</button>
+</div>
+
+<div class="hero">
+  <h1>Plan Your Trip</h1>
+</div>
+
+<div class="destinations">
+  <h2>Popular Destinations</h2>
+
+  <div class="dest-grid">
+
+    <div class="dest-card" onclick="selectPlace('Goa')">
+      <img src="https://source.unsplash.com/300x200/?goa">
+      <p>Goa</p>
+    </div>
+
+    <div class="dest-card" onclick="selectPlace('Manali')">
+      <img src="https://source.unsplash.com/300x200/?manali">
+      <p>Manali</p>
+    </div>
+
+    <div class="dest-card" onclick="selectPlace('Hyderabad')">
+      <img src="https://source.unsplash.com/300x200/?hyderabad">
+      <p>Hyderabad</p>
+    </div>
+
+  </div>
+</div>
+<h3 id="selectedPlace"></h3>
+
+<div class="card">
+  <input type="number" id="budget" placeholder="Total Budget">
+  <input type="number" id="days" placeholder="Days">
+  <input type="number" id="travel" placeholder="Travel Cost">
+  <input type="number" id="hotel" placeholder="Hotel per Day">
+  <input type="number" id="food" placeholder="Food per Day">
+
+  <button onclick="calculate()">Calculate</button>
+  <button onclick="downloadPDF()">Download Report</button>
+
+  <h3 id="result"></h3>
+
+  <canvas id="chart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

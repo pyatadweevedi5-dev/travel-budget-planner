@@ -1,0 +1,40 @@
+.destinations {
+  padding: 30px;
+  text-align: center;
+}
+
+.dest-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dest-card {
+  width: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.dest-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.dest-card p {
+  margin: 10px;
+}
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+  }
+
+  .dest-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
