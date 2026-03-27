@@ -1,90 +1,60 @@
-function signup() {
-  let user = document.getElementById("newUser").value;
-  let pass = document.getElementById("newPass").value;
-  if(!user || !pass){
-    alert("please fill all fields");
-    return;
-  }
+let chartInstance;
 
-  localStorage.setItem(user, pass);
-  alert("Account created!");
-  window.location.href = "index.html";
+// SELECT DESTINATION
+let selectedplace ="";
+function selectPlace(place) {
+  document.getElementById("selectedPlace").innerText =
+    "Selected: " + place;
 }
 
-function login() {
-  let user = document.getElementById("username").value;
-  let pass = document.getElementById("password").value;
-
-  let storedPass = localStorage.getItem(user);
-
-  if(pass === storedPass) {
-    window.location.href = "planner.html";
-  } else {
-    alert("Invalid login");
-  }
-}
-
-function goSignup(){
-  window.location.href = "signup.html";
-}
-
-function goLogin(){
-  window.location.href = "index.html";
-}
-
+// CALCULATE
 function calculate() {
-  let budget = +document.getElementById("budget").value;
-  let days = +document.getElementById("days").value;
-  let travel = +document.getElementById("travel").value;
-  let hotel = +document.getElementById("hotel").value;
-  let food = +document.getElementById("food").value;
+  let budget = parseInt(document.getElementById("budget").value) || 0;
+  let days = parseInt(document.getElementById("days").value) || 0;
+  let travel = parseInt(document.getElementById("travel").value) || 0;
+  let hotel = (parseInt(document.getElementById("hotel").value) || 0) * days;
+  let food = (parseInt(document.getElementById("food").value) || 0) * days;
 
-  let hotelTotal = hotel * days;
-  let foodTotal = food * days;
-
-  let total = travel + hotelTotal + foodTotal;
+  let total = travel + hotel + food;
   let remaining = budget - total;
 
-  document.getElementById("result").innerHTML =
-    `Total: ₹${total} <br> Remaining: ₹${remaining}`;
+  document.getElementById("result").innerText =
+    "Total: ₹" + total + " | Remaining: ₹" + remaining;
 
-  drawChart(travel, hotelTotal, foodTotal);
+  drawChart(travel, hotel, food);
 }
 
+// CHART
 function drawChart(travel, hotel, food) {
-  const ctx = document.getElementById('chart');
+  const ctx = document.getElementById("chart");
 
-  new Chart(ctx, {
-    type: 'pie',
+  if (chartInstance) {
+    chartInstance.destroy();
+  }
+
+  chartInstance = new Chart(ctx, {
+    type: "pie",
     data: {
-      labels: ['Travel', 'Hotel', 'Food'],
+      labels: ["Travel", "Hotel", "Food"],
       datasets: [{
         data: [travel, hotel, food]
       }]
     }
   });
 }
+function login() {
+  let user = document.getElementById("username").value;
 
-function toggleMode() {
-  document.body.classList.toggle("dark");
+  if(user === "") {
+    alert("Enter your name");
+    return;
+  }
+
+  localStorage.setItem("user", user);
+  window.location.href = "planner.html";
 }
 
-function selectPlace(place) {
-  document.getElementById("selectedPlace").innerText = "Selected: " + place;
-}
-
-  
-
-
-function downloadPDF() {
-  let result = document.getElementById("result").innerText;
-
-  let content = "Travel Budget Report\n\n" + result;
-
-  let blob = new Blob([content], { type: "text/plain" });
-
-  let link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "Travel_Report.txt";
-  link.click();
+function fakeGoogle() {
+  localStorage.setItem("user", "Google User");
+  window.location.href = "planner.html";
 }

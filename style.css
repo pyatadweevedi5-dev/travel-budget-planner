@@ -1,40 +1,107 @@
-.destinations {
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* BACKGROUND IMAGE */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("https://images.unsplash.com/photo-1564507592333-c60657eea523") no-repeat center/cover;
+  filter: brightness(0.7);
+  z-index: -1;
+}
+
+/* CENTER BOX */
+.login-box {
+  width: 320px;
+  margin: 120px auto;
   padding: 30px;
   text-align: center;
+  border-radius: 15px;
+
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(15px);
+  color: white;
 }
 
-.dest-grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+/* TEXT */
+.login-box h1 {
+  margin-bottom: 10px;
 }
 
-.dest-card {
-  width: 150px;
-  border-radius: 10px;
-  overflow: hidden;
+.login-box p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* BUTTON */
+.primary-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  color: white;
+  font-size: 16px;
   cursor: pointer;
-  background: white;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+/* GOOGLE BUTTON */
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+/* DIVIDER */
+.divider {
+  margin: 15px 0;
+  font-size: 14px;
+}
 .dest-card img {
   width: 100%;
-  height: 100px;
+  height: 180px;
   object-fit: cover;
+  border-radius: 10px;
+}
+.dest-card {
+  width: 200px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.dest-card p {
-  margin: 10px;
+.dest-card:hover {
+  transform: scale(1.05);
 }
-@media (max-width: 600px) {
-  .card {
-    width: 90%;
-  }
-
-  .dest-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+.destinations {
+  text-align: center;
+  margin: 40px auto;
+  width: 90%;
+}
+.dest-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* 🔥 THIS CENTERS */
+  gap: 20px;
+  margin-top: 20px;
 }
