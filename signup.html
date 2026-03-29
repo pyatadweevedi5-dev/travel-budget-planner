@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Auth Page</title>
+  <title>Signup Page</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<div class="container">
+<body class="signup-body">
 
-  <!-- LOGIN FORM -->
-  <div id="loginForm">
-    <h2>Login</h2>
-    <input type="text" id="loginUserId" placeholder="User ID">
-    <input type="password" id="loginPassword" placeholder="Password">
-    <button onclick="login()">Login</button>
-    <p onclick="showSignup()">Don't have an account? Signup</p>
+<div class="auth-container">
+
+  <!-- LEFT SIDE -->
+  <div class="auth-left">
+    <h1>✈ Roam2Rio</h1>
+    <p>Plan smarter. Travel better.</p>
   </div>
 
-  <!-- SIGNUP FORM -->
-  <div id="signupForm" style="display:none;">
-    <h2>Create Account</h2>
-    <input type="text" id="firstName" placeholder="First Name">
-    <input type="text" id="lastName" placeholder="Last Name">
-    <input type="tel" id="phone" placeholder="Phone Number">
-    <input type="text" id="userId" placeholder="User ID">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="signup()">Signup</button>
-    <p onclick="showLogin()">Already have an account? Login</p>
+  <!-- RIGHT SIDE -->
+  <div class="auth-box">
+
+    <!-- LOGIN -->
+    <div id="loginForm">
+      <h2>Welcome Back</h2>
+
+      <input type="text" id="loginUserId" placeholder="User ID">
+      <input type="password" id="loginPassword" placeholder="Password">
+
+      <button id="loginBtn" class="btn-primary">Login</button>
+
+      <p>Don't have an account? <span onclick="showSignup()">Signup</span></p>
+    </div>
+
+    <!-- SIGNUP -->
+    <div id="signupForm" style="display:none;">
+      <h2>Create Account</h2>
+
+      <input type="text" id="firstName" placeholder="First Name">
+      <input type="text" id="lastName" placeholder="Last Name">
+      <input type="tel" id="phone" placeholder="Phone Number">
+      <input type="text" id="userId" placeholder="User ID">
+      <input type="password" id="password" placeholder="Password">
+
+      <button id="signupBtn" class="btn-primary">Signup</button>
+
+      <p>Already have an account? <span onclick="showLogin()">Login</span></p>
+    </div>
+
   </div>
 
 </div>

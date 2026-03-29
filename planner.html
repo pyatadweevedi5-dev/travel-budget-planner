@@ -7,126 +7,30 @@
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <h2>✈ TravelEase</h2>
+<h1 class="title">✈ Travel Budget Planner</h1>
+
+<input type="text" id="search" placeholder="Search destination...">
+
+<div class="filters">
+  <button onclick="filterPlaces('all')">All</button>
+  <button onclick="filterPlaces('mountain')">Mountains</button>
+  <button onclick="filterPlaces('beach')">Beach</button>
+  <button onclick="filterPlaces('city')">City</button>
 </div>
 
-<h1 class="title">Plan Your Trip Across India</h1>
+<div id="grid" class="grid"></div>
+<div id="details"></div>
+<div class="budget-box">
+  <h3>💰 Plan Your Budget</h3>
 
-<!-- DESTINATIONS -->
-<div class="destinations">
+  <input type="number" id="budget" placeholder="Enter your budget">
+  <input type="number" id="days" placeholder="Number of days">
 
-  <div class="dest-grid">
-    <!-- Agra -->
-<div class="dest-card" onclick="selectPlace('Agra')">
-  <img src="https://images.unsplash.com/photo-1548013146-72479768bada">
-  <p>Agra</p>
+  <button onclick="calculateTrip()">Calculate</button>
+
+  <h3 id="tripResult"></h3>
 </div>
 
-<!-- Varanasi -->
-<div class="dest-card" onclick="selectPlace('Varanasi')">
-  <img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc">
-  <p>Varanasi</p>
-</div>
-
-<!-- Rishikesh -->
-<div class="dest-card" onclick="selectPlace('Rishikesh')">
-  <img src="https://images.unsplash.com/photo-1580397586541-7e7f6c77e4f3">
-  <p>Rishikesh</p>
-</div>
-
-<!-- Leh Ladakh -->
-<div class="dest-card" onclick="selectPlace('Ladakh')">
-  <img src="https://images.unsplash.com/photo-1609947017136-9daf32a5eb16">
-  <p>Ladakh</p>
-</div>
-
-<!-- Udaipur -->
-<div class="dest-card" onclick="selectPlace('Udaipur')">
-  <img src="https://images.unsplash.com/photo-1599661046827-dacde6976548">
-  <p>Udaipur</p>
-</div>
-
-<!-- Bangalore -->
-<div class="dest-card" onclick="selectPlace('Bangalore')">
-  <img src="https://images.unsplash.com/photo-1580661869408-55ab23f2c6c0">
-  <p>Bangalore</p>
-</div>
-
-<!-- Chennai -->
-<div class="dest-card" onclick="selectPlace('Chennai')">
-  <img src="https://images.unsplash.com/photo-1580655653885-65763b2597d0">
-  <p>Chennai</p>
-</div>
-
-<!-- Kolkata -->
-<div class="dest-card" onclick="selectPlace('Kolkata')">
-  <img src="https://images.unsplash.com/photo-1558431382-27e303142255">
-  <p>Kolkata</p>
-</div>
-
-<!-- Andaman -->
-<div class="dest-card" onclick="selectPlace('Andaman')">
-  <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3">
-  <p>Andaman</p>
-</div>
-
-<!-- Meghalaya -->
-<div class="dest-card" onclick="selectPlace('Meghalaya')">
-  <img src="https://images.unsplash.com/photo-1622308644420-b20142dc993c">
-  <p>Meghalaya</p>
-</div>
-
-    <div class="dest-card" onclick="selectPlace('Goa')">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-      <p>Goa</p>
-    </div>
-
-    <div class="dest-card" onclick="selectPlace('Manali')">
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
-      <p>Manali</p>
-    </div>
-
-    <div class="dest-card" onclick="selectPlace('Hyderabad')">
-      <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41">
-      <p>Hyderabad</p>
-    </div>
-
-    <div class="dest-card" onclick="selectPlace('Delhi')">
-      <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5">
-      <p>Delhi</p>
-    </div>
-
-  </div>
-
-</div>
-
-<h3 id="selectedPlace"></h3>
-
-<!-- BUDGET CARD -->
-<div class="card">
-
-  <h2>Budget Planner</h2>
-
-  <input type="number" id="budget" placeholder="Total Budget">
-  <input type="number" id="days" placeholder="Days">
-  <input type="number" id="travel" placeholder="Travel Cost">
-  <input type="number" id="hotel" placeholder="Hotel per Day">
-  <input type="number" id="food" placeholder="Food per Day">
-
-  <br><br>
-
-  <button onclick="calculate()">Calculate</button>
-
-  <h3 id="result"></h3>
-<div class="chart-box"></div>
-  <canvas id="chart"></canvas>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>

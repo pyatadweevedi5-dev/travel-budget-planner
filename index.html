@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TravelEase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Roam2Rio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -10,23 +11,51 @@
 <!-- BACKGROUND -->
 <div class="bg"></div>
 
-<!-- LOGIN BOX -->
-<div class="login-box">
+<!-- HEADER -->
+<header class="main-header">
+  <div class="logo">✈ Roam2Rio</div>
 
-  <h1>✈ TravelEase</h1>
-  <p>Plan smarter. Travel better.</p>
+  <nav class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Features</a>
+    <a href="#">Destinations</a>
+  </nav>
 
-  <input type="text" id="username" placeholder="Enter your name">
+  
+</header>
 
-  <button class="primary-btn" onclick="login()">Start Planning</button>
+<!-- HERO -->
+<section class="hero">
+  <h1>Travel Smart. Spend Better.</h1>
+  <p>Plan trips, manage budgets, and explore India effortlessly.</p>
 
-  <div class="divider">OR</div>
+  <div class="hero-buttons">
+    <button class="primary-btn" onclick="startPlanning()">Start Planning</button>
+    
+    
+  </div>
+</section>
 
-  <button class="google-btn" onclick="fakeGoogle()">Continue with Google</button>
+<!-- FEATURES -->
+<section class="features">
 
-</div>
+  <div class="feature-card">
+    <h3>💰 Budget Control</h3>
+    <p>Track expenses and stay within budget easily.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>📍 Smart Destinations</h3>
+    <p>Choose from top places across India instantly.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>📊 Visual Insights</h3>
+    <p>Understand your spending with charts.</p>
+  </div>
+
+</section>
 
 <script src="script.js"></script>
-
 </body>
 </html>
