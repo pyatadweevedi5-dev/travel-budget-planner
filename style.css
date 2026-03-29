@@ -674,3 +674,42 @@ body {
 body {
   background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
+/* ===== COMPACT BUTTON STYLE ===== */
+
+.filters button,
+.budget-box button {
+  width: auto;                 /* remove full width */
+  padding: 8px 16px;          /* smaller size */
+  margin: 5px;
+  border-radius: 20px;        /* pill shape */
+  border: none;
+  cursor: pointer;
+
+  background: rgba(255,255,255,0.15);
+  color: white;
+
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+/* hover effect */
+.filters button:hover,
+.budget-box button:hover {
+  background: #ff7e5f;
+  transform: scale(1.05);
+}
+.filters {
+  text-align: center;
+}
+
+.budget-box {
+  text-align: center;
+  margin-top: 20px;
+}
+.budget-box input {
+  width: 180px;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
+}
